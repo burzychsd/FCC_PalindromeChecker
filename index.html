@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Palindrome Checker</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Poor+Story" rel="stylesheet">
+	<link rel="stylesheet" href="./public/main.css" type="text/css">
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<img src="./public/images/palindrome-logo.svg" width="64px" height="64px" alt="logo-palindrome">
+		</div>
+		<nav>
+			<ul>
+				<li onclick="showModal()">What is a Palindrome?</li>
+				<div id="modal">
+					<img src="./public/images/modal-background.svg" alt="modal">
+					<p>A palindrome is a word, number, or other sequence of characters which reads the same backward as forward, such as madam or racecar.</p>
+				</div>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h1 id="title">Palindrome Checker</h1>
+		<p id="description">Check if your word is a Palindrome!</p>
+		<input id="palindrome" type="text" value="" placeholder="Enter your word(s)" oninput="inputHandle()">
+		<button onclick="chechIf()">Check</button>
+		<button onclick="window.location.reload()">Refresh</button>
+	</main>
+</body>
+<script>
+
+	let input = document.querySelector('#palindrome');
+	let title = document.querySelector("#title");
+	let paragraph = document.querySelector('#description');
+	let inputValue;
+
+	function palindrome(inputValue) {
+		// Good luck!
+		const regex = /[a-z0-9]+/gi;
+		const properStr = inputValue.match(regex).map(a => typeof a === 'number' ? a.toString() : a).join("").toLowerCase();
+		const reverseStr = inputValue.match(regex).join("").split("").reverse().join("").toLowerCase();
+
+		return properStr === reverseStr ? true : false;
+	}
+
+	function inputHandle() {
+		inputValue = input.value;
+		if(inputValue === '') {
+			return "Something goes wrong";
+		} else {
+			return palindrome(inputValue);
+		}
+	}
+
+	function chechIf() {
+		inputHandle() === true ? (title.innerHTML = "Yep", paragraph.innerHTML = "Check another word ;)") : inputHandle() === false ? (title.innerHTML = "Nope", paragraph.innerHTML = "Unfortunately, this is not a palindrome") : (title.innerHTML = "Oops!", paragraph.innerHTML = "Did you enter your word(s)?");
+	}
+
+	function showModal() {
+		const modal = document.querySelector("#modal");
+		if(modal.style.visibility === "visible"){
+			modal.style.visibility = "hidden";
+		} else {
+			modal.style.visibility = "visible";
+		}
+	}
+
+</script>
+</html>

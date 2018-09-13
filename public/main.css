@@ -1,0 +1,168 @@
+:root {
+
+	--flex-display: flex;
+	--flex-flow: column nowrap;
+	--flex-justifyContentHeader: space-between;
+	--flex-alignItems: center;
+	--flex-justifyContentMain: center;
+
+	--body-fontColor: #F7A072;
+
+	--title-fontSize: 2.875em;
+	--text-fontSize: 1em;
+
+	--title-lineHeight: 1.5em;
+	--title-fontFamily: 'Poor Story', sans-serif;
+
+	--text-fontFamily: 'Nunito Sans', sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	background: #0FA3B1;
+}
+
+body {
+	max-width: 960px;
+	display: var(--flex-display);
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: var(--flex-flow);
+	        flex-flow: var(--flex-flow);
+	margin: auto;
+}
+
+header {
+	width: 100%;
+	height: 88px;
+	max-width: 750px;
+	margin: 2em auto 0 auto;
+	display: var(--flex-display);
+	-webkit-box-pack: var(--flex-justifyContentHeader);
+	    -ms-flex-pack: var(--flex-justifyContentHeader);
+	        justify-content: var(--flex-justifyContentHeader);
+	-webkit-box-align: var(--flex-alignItems);
+	    -ms-flex-align: var(--flex-alignItems);
+	        align-items: var(--flex-alignItems);
+}
+
+nav > ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav > ul > li {
+	font-family: var(--text-fontFamily);
+	font-size: var(--text-fontSize);
+	color: var(--body-fontColor);
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+main {
+	width: 100%;
+	display: var(--flex-display);
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: var(--flex-flow);
+	        flex-flow: var(--flex-flow);
+}
+
+main > h1 {
+	font-family: var(--title-fontFamily);
+	font-size: var(--title-fontSize);
+	line-height: var(--title-lineHeight);
+	color: var(--body-fontColor);
+	margin: 0.5em auto;
+	text-align: center;
+	letter-spacing: 0.1em;
+	padding: 0 1em;
+}
+
+main > p {
+	font-family: var(--text-fontFamily);
+	font-size: var(--text-fontSize);
+	color: var(--body-fontColor);
+	font-weight: 700;
+	margin: 0 auto;
+	text-align: center;
+	letter-spacing: 0.2em;
+	padding: 0 1em;
+}
+
+main > input {
+	width: 260px;
+	height: 40px;
+	margin: 2em auto;
+	border: none;
+	border-radius: 20px;
+	background: #FFDEB4;
+	outline: none;
+	padding: 1em;
+	color: var(--body-fontColor);
+	font-family: var(--text-fontFamily);
+	font-size: var(--text-fontSize);
+	font-weight: 700;
+}
+
+main > input::-webkit-input-placeholder {
+	color: var(--body-fontColor);
+}
+
+main > input:-ms-input-placeholder {
+	color: var(--body-fontColor);
+}
+
+main > input::-ms-input-placeholder {
+	color: var(--body-fontColor);
+}
+
+main > input::placeholder {
+	color: var(--body-fontColor);
+}
+
+main > button {
+	width: 150px;
+	height: 40px;
+	margin: 0 auto 1em auto;
+	border: none;
+	border-radius: 20px;
+	background: var(--body-fontColor);
+	font-family: var(--text-fontFamily);
+	font-size: var(--text-fontSize);
+	font-weight: 700;
+	color: #FFDEB4;
+	cursor: pointer;
+	outline: none;
+}
+
+#logo {
+	margin-left: 20px;
+}
+
+#modal {
+	position: absolute;
+	margin-top: 0.5em;
+	width: 200px;
+	height: 200px;
+	color: var(--body-fontColor);
+	font-family: var(--text-fontFamily);
+	font-size: var(--text-fontSize);
+	font-weight: 700;
+	visibility: hidden;
+}
+
+#modal > p {
+	position: absolute;
+	top: 2em;
+	left: 0.5em;
+	padding: 0 0.5em;
+}
+
