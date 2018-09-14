@@ -49,7 +49,7 @@
 	function inputHandle() {
 		const regex = /[$&+,:;=?@#|'<>.^*()%!-]/g;
 		inputValue = input.value;
-		if(inputValue === '' || regex.test(inputValue)) {
+		if(inputValue === '' || regex.test(inputValue) === true) {
 			return "Something goes wrong";
 		} else {
 			return palindrome(inputValue);
@@ -57,7 +57,7 @@
 	}
 
 	function chechIf() {
-		inputHandle() === true ? (title.innerHTML = "Yep", paragraph.innerHTML = "Check another word ;)") : inputHandle() === false ? (title.innerHTML = "Nope", paragraph.innerHTML = "Unfortunately, this is not a palindrome") : (title.innerHTML = "Oops!", paragraph.innerHTML = "Did you enter your word(s)?");
+		inputHandle() === true ? (title.innerHTML = "Yep", paragraph.innerHTML = "Check another word ;)") : inputHandle() === false ? (title.innerHTML = "Nope", paragraph.innerHTML = "Unfortunately, this is not a palindrome") : (title.innerHTML = "Oops!", paragraph.innerHTML = "Did you enter proper word(s)?");
 	}
 
 	function showModal() {
