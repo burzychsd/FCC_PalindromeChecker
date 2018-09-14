@@ -47,8 +47,9 @@
 	}
 
 	function inputHandle() {
+		const regex = /[$&+,:;=?@#|'<>.^*()%!-]/g;
 		inputValue = input.value;
-		if(inputValue === '') {
+		if(inputValue === '' || regex.test(inputValue)) {
 			return "Something goes wrong";
 		} else {
 			return palindrome(inputValue);
